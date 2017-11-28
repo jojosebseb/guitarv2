@@ -263,19 +263,29 @@ $container-width: 800px;
     .video-details{
         width: 55%;
         padding-left: 15px;
+        position: relative;
+        .group{
+            width: 100%;
+        }
         .video-name{
             font-size: 22px;
             color: #111;
         }
         .video-uploader{
-            padding: 10px 0;
             font-size: 14px;
+            color: #545454;
+            padding: 10px 0;
+        }
+        .video-gear{
+            font-size: 13px;
             color: #545454;
         }
         .video-functions{
             display: flex;
             font-size: 13px;
             color: #343434;
+            position: absolute;
+            bottom: 10px;
             .function-group{
                 margin-right: 10px;
             }
@@ -288,16 +298,14 @@ $container-width: 800px;
     .container{
         display: flex;
         flex-wrap: wrap;
-        width: 1000px;
+        width: 1200px;
+        align-items: flex-start;
+        justify-content: space-between;
     }
     .video-module{
-        width: 600px;
+        width: 800px;
         display: flex;
-        margin: 10px 0;
         background: white;
-        transition: all .3s ease;
-        padding: 5px;
-        cursor: pointer;
         flex-wrap: wrap;
     }
     .video-thumb{
@@ -341,6 +349,62 @@ $container-width: 800px;
             }
         }
     }
+
+
+}
+#related-videos{
+    width: 380px;
+    .title{
+        font-family: LatoReg;
+        font-size: 18px;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+    }
+    .related-video-module{
+        width: 100%;
+        margin: 5px 0 10px;
+        display: flex;
+        .video-thumb{
+            width: 50%;
+            position: relative;
+            img{
+                width: 100%;
+                display: block;
+                filter: grayscale(0.5);
+            }
+            .video-duration{
+                position: absolute;
+                bottom: 8px;
+                right: 8px;
+                background: rgba(0,0,0,0.8);
+                color: #aaa;
+                padding: 3px;
+                letter-spacing: 1.5px;
+                font-size: 13px;
+                font-weight: bold;
+                border-radius: 3px;
+            }
+        }
+        .video-details{
+            width: 50%;
+            position: relative;
+            padding: 0px 0px 0 10px;
+            .group{
+                width: 100%;
+            }
+            .video-name{
+                font-size: 14px;
+                color: #111;
+            }
+            .video-uploader{
+                font-size: 13px;
+                color: #545454;
+                // display: none;
+            }
+        }
+    }
+
 }
 
 .form-title{

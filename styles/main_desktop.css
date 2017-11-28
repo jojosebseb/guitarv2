@@ -292,6 +292,11 @@
 #videoGallery .video-details {
   width: 55%;
   padding-left: 15px;
+  position: relative;
+}
+
+#videoGallery .video-details .group {
+  width: 100%;
 }
 
 #videoGallery .video-details .video-name {
@@ -300,8 +305,13 @@
 }
 
 #videoGallery .video-details .video-uploader {
-  padding: 10px 0;
   font-size: 14px;
+  color: #545454;
+  padding: 10px 0;
+}
+
+#videoGallery .video-details .video-gear {
+  font-size: 13px;
   color: #545454;
 }
 
@@ -309,6 +319,8 @@
   display: flex;
   font-size: 13px;
   color: #343434;
+  position: absolute;
+  bottom: 10px;
 }
 
 #videoGallery .video-details .video-functions .function-group {
@@ -322,17 +334,15 @@
 #videoDetail .container {
   display: flex;
   flex-wrap: wrap;
-  width: 1000px;
+  width: 1200px;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
 #videoDetail .video-module {
-  width: 600px;
+  width: 800px;
   display: flex;
-  margin: 10px 0;
   background: white;
-  transition: all .3s ease;
-  padding: 5px;
-  cursor: pointer;
   flex-wrap: wrap;
 }
 
@@ -383,6 +393,68 @@
 
 #videoDetail .video-details .video-functions .function-group {
   margin-right: 10px;
+}
+
+#related-videos {
+  width: 380px;
+}
+
+#related-videos .title {
+  font-family: LatoReg;
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+#related-videos .related-video-module {
+  width: 100%;
+  margin: 5px 0 10px;
+  display: flex;
+}
+
+#related-videos .related-video-module .video-thumb {
+  width: 50%;
+  position: relative;
+}
+
+#related-videos .related-video-module .video-thumb img {
+  width: 100%;
+  display: block;
+  filter: grayscale(0.5);
+}
+
+#related-videos .related-video-module .video-thumb .video-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #aaa;
+  padding: 3px;
+  letter-spacing: 1.5px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+#related-videos .related-video-module .video-details {
+  width: 50%;
+  position: relative;
+  padding: 0px 0px 0 10px;
+}
+
+#related-videos .related-video-module .video-details .group {
+  width: 100%;
+}
+
+#related-videos .related-video-module .video-details .video-name {
+  font-size: 14px;
+  color: #111;
+}
+
+#related-videos .related-video-module .video-details .video-uploader {
+  font-size: 13px;
+  color: #545454;
 }
 
 .form-title {

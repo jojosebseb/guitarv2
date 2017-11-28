@@ -1,5 +1,6 @@
 // init start
 *{
+    box-sizing: border-box;
     background: none;
     border: none;
     color: inherit;
@@ -9,7 +10,211 @@
     text-decoration: none;
 }
 @font-face {
-    font-family: "";
-    src: url('../fonts/');
+    font-family: "KaushanReg";
+    src: url('../fonts/Kaushan-Regular.ttf');
+}
+@font-face {
+    font-family: "LatoReg";
+    src: url('../fonts/Lato-Regular.ttf');
 }
 //init end
+
+//pallette
+$container-width: 100%;
+.container{
+    width: $container-width;
+    margin: auto;
+    padding: 0 10px;
+}
+.back-blur{
+    filter: blur(5px);
+}
+
+//pallette
+
+.logo-gram{
+    font-family: "KaushanReg";
+    font-size: 90px;
+    line-height: 1;
+}
+.seperator{
+    display: block;
+    border-bottom: 2px solid #888;
+}
+.seperator.s{
+    width: 30px;
+    margin: 10px auto;
+}
+#navbar{
+    .container{
+        font-family: LatoReg;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .logo-gram{
+        width: 100%;
+        margin: 10px 0 0;
+    }
+    .text{
+        width: 100%;
+        opacity: 0.8;
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+    .l2{
+        font-size: 18px;
+        margin: 5px 0 8px;
+        letter-spacing: 12px;
+        text-transform: uppercase;
+    }
+}
+#footer{
+    padding: 20px 0 30px;
+    text-align: center;
+    font-family: LatoReg;
+    opacity: 0.5;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+#menuHandle{
+    position: fixed;
+    top: 5vh;
+    right: 5vw;
+    display: flex;
+    font-family: LatoReg;
+    align-items: center;
+    z-index: 99;
+    flex-wrap: wrap;
+    .menu{
+        opacity: 0;
+        transition: all .3s ease;
+        color: #ddd;
+        width: 100%;
+        position: fixed;
+        top: 5vh;
+        left: 0;
+        >ul{
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 10%;
+            >li{
+                width: 100%;
+                padding: 10px 0;
+                >a{
+                    letter-spacing: 1px;
+                    font-size: 17px;
+                    padding: 0px 0 5px;
+                    max-width: 0;
+                    opacity: 0;
+                    transition: all .3s ease;
+                    border-bottom: 1px solid transparent;
+                }
+            }
+        }
+        .sub-menu{
+            padding: 5px 0;
+            >li >a{
+                display: inline-block;
+                font-size: 15px;
+                margin-top: 4px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid transparent;
+            }
+            >li >a:before{
+                content: "-";
+                display: inline-block;
+                padding-right: 5px;
+                transform: scaleY(0.9) scaleX(0.65);
+            }
+            >li >a:hover{
+                border-bottom: 1px solid #777;
+            }
+        }
+    }
+    .line-box{
+        width: 36px;
+        cursor: pointer;
+        .lines{
+            border: 2px solid black;
+            margin: 4px;
+            position: relative;
+            top: 0;
+
+        }
+    }
+    .line-box:hover{
+        opacity: 0.6;
+    }
+}
+#menuHandle.active{
+    .menu{
+        opacity: 1;
+        >ul{
+            >li >a{
+                opacity: 1;
+            }
+            >li >a:hover{
+                opacity: 0.8;
+                border-bottom: 1px solid #777;
+            }
+        }
+    }
+    .line-box{
+        .lines{
+            border: 2px solid #de3f3f;
+            transition: all .3s ease;
+        }
+        #line1{
+            transform: rotateZ(45deg);
+            top: 8px;
+        }
+        #line2{
+            opacity: 0;
+        }
+        #line3{
+            transform: rotateZ(-45deg);
+            top: -8px;
+        }
+    }
+}
+#globalFader{
+    opacity: 0;
+    background: black;
+    z-index: -1;
+    transition: all .6s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+#globalFader.active{
+    opacity: 0.8;
+    z-index: 98;
+}
+#parentContainer{
+    padding-top: 60px;
+}
+#universalHeader{
+    font-family: LatoReg;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+#gallerySection{
+    .container{
+
+    }
+    .gallery-module{
+        margin: 30px 0;
+        width: 100%;
+        img{
+            width: 100%;
+            display: block;
+        }
+    }
+}

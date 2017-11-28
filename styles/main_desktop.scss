@@ -25,6 +25,9 @@ $container-width: 800px;
     width: $container-width;
     margin: auto;
 }
+.back-blur{
+    filter: blur(5px);
+}
 //pallette
 
 .logo-gram{
@@ -57,12 +60,12 @@ $container-width: 800px;
         width: 100%;
         opacity: 0.8;
         letter-spacing: 2px;
-        font-size: 14px;
+        font-size: 12px;
     }
     .l2{
         font-size: 18px;
         margin: 5px 0 8px;
-        letter-spacing: 10px;
+        letter-spacing: 12px;
         text-transform: uppercase;
     }
 }
@@ -73,11 +76,12 @@ $container-width: 800px;
     opacity: 0.5;
     letter-spacing: 1px;
     font-size: 14px;
+    margin-top: 100px;
 }
 #menuHandle{
     position: fixed;
-    top: 5%;
-    right: 5%;
+    top: 5vh;
+    right: 5vw;
     display: flex;
     font-family: LatoReg;
     align-items: center;
@@ -92,7 +96,7 @@ $container-width: 800px;
             >li >a{
                 letter-spacing: 1px;
                 font-size: 15px;
-                padding: 5px 0;
+                padding: 0px 0 5px;
                 max-width: 0;
                 opacity: 0;
                 transition: all .3s ease;
@@ -123,12 +127,14 @@ $container-width: 800px;
         }
     }
     .line-box{
-        width: 35px;
+        width: 36px;
         cursor: pointer;
         .lines{
             border: 2px solid black;
             margin: 4px;
             position: relative;
+            top: 0;
+
         }
     }
     .line-box:hover{
@@ -153,6 +159,18 @@ $container-width: 800px;
     .line-box{
         .lines{
             border: 2px solid #888;
+            transition: all .3s ease;
+        }
+        #line1{
+            transform: rotateZ(45deg);
+            top: 8px;
+        }
+        #line2{
+            opacity: 0;
+        }
+        #line3{
+            transform: rotateZ(-45deg);
+            top: -8px;
         }
     }
 }
@@ -173,6 +191,7 @@ $container-width: 800px;
 }
 #parentContainer{
     padding-top: 60px;
+    min-height: 80vh;
 }
 #universalHeader{
     font-family: LatoReg;
@@ -180,17 +199,300 @@ $container-width: 800px;
     letter-spacing: 10px;
     text-align: center;
     font-size: 24px;
+    margin-bottom: 30px;
 }
 #gallerySection{
-    .container{
-
-    }
     .gallery-module{
         margin: 30px 0;
         width: 100%;
         img{
             width: 100%;
             display: block;
+        }
+    }
+}
+//mobile-v1
+.w40{
+    width: 40%;
+}
+.w50{
+    width: 50%;
+}
+.w60{
+    width: 60%;
+}
+#videoGallery{
+    font-family: LatoReg;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .video-module{
+        width: 100%;
+        display: flex;
+        margin: 10px 0;
+        background: white;
+        transition: all .3s ease;
+        padding: 5px;
+        cursor: pointer;
+    }
+    .video-module:hover{
+        box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.1);
+    }
+    .video-thumb{
+        width: 45%;
+        position: relative;
+        img{
+            width: 100%;
+            display: block;
+            filter: grayscale(0.5);
+        }
+        .video-duration{
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            color: #aaa;
+            padding: 3px;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+    }
+    .video-details{
+        width: 55%;
+        padding-left: 15px;
+        .video-name{
+            font-size: 22px;
+            color: #111;
+        }
+        .video-uploader{
+            padding: 10px 0;
+            font-size: 14px;
+            color: #545454;
+        }
+        .video-functions{
+            display: flex;
+            font-size: 13px;
+            color: #343434;
+            .function-group{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+#videoDetail{
+    font-family: LatoReg;
+    .container{
+        display: flex;
+        flex-wrap: wrap;
+        width: 1000px;
+    }
+    .video-module{
+        width: 600px;
+        display: flex;
+        margin: 10px 0;
+        background: white;
+        transition: all .3s ease;
+        padding: 5px;
+        cursor: pointer;
+        flex-wrap: wrap;
+    }
+    .video-thumb{
+        width: 100%;
+        position: relative;
+        img{
+            width: 100%;
+            display: block;
+        }
+        .video-duration{
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            background: rgba(0,0,0,0.8);
+            color: #aaa;
+            padding: 3px;
+            letter-spacing: 1.5px;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+    }
+    .video-details{
+        width: 100%;
+        padding-top: 15px;
+        .video-name{
+            font-size: 22px;
+            color: #111;
+        }
+        .video-uploader{
+            padding: 10px 0;
+            font-size: 14px;
+            color: #545454;
+        }
+        .video-functions{
+            display: flex;
+            font-size: 13px;
+            color: #343434;
+            .function-group{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.form-title{
+    font-size: 22px;
+    width: 100%;
+    text-align: center;
+    font-family: LatoReg;
+}
+.outline-form{
+    font-family: LatoReg;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 550px;
+    margin: auto;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 0px 15px 20px;
+    .form-caption{
+        padding: 5px;
+        width: 100%;
+        margin-top: 15px;
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    .form-group{
+        display: flex;
+        padding: 5px;
+        align-items: flex-end;
+        width: 100%;
+        font-size: 14px;
+        flex-wrap: wrap;
+        .caption{
+            width: 100%;
+            padding-bottom: 5px;
+            color: #666;
+            font-size: 14px;
+        }
+    }
+    .form-group.w50{
+        width: 50%;
+    }
+    .form-input{
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 10px 10px;
+        border-radius: 3px;
+        outline: none;
+        font-size: 15px;
+        color: #222;
+    }
+    .form-button{
+        width: 100%;
+        padding: 10px 10px;
+        border-radius: 3px;
+        outline: none;
+        font-size: 16px;
+        color: #222;
+        background: #eee;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+    .form-input:focus{
+        border: 1px solid #bababa;
+    }
+    .form-input.w30{
+        width: 20%;
+        margin-right: 1%;
+    }
+    .form-input.w70{
+        width: 79%;
+    }
+    .form-group.center{
+        margin: auto;
+    }
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      color: #ccc;
+      font-size: 12px;
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+      color: #ccc;
+      font-size: 12px;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+      color: #ccc;
+      font-size: 12px;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+      color: #ccc;
+      font-size: 12px;
+    }
+    .help-link{
+        text-align: center;
+        width: 100%;
+        margin: 20px 0;
+        font-size: 13px;
+        color: #888;
+        a{
+            display: inline-block;
+            text-decoration: underline;
+        }
+    }
+}
+
+#entryGuide{
+    font-family: LatoReg;
+    .container{
+        border: 1px solid #ddd;
+        padding: 20px 10px;
+        border-radius: 5px;
+    }
+    .header{
+        font-size: 16px;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .step-module{
+        padding: 15px;
+        // background: #f5f5f5;
+        margin: 10px 0;
+        a{
+            text-decoration: underline;
+        }
+        .step{
+            font-size: 18px;
+            color: #222;
+            border-bottom: 1px solid #aaa;
+            padding: 0px 5px 13px;
+        }
+        .paragraph{
+            font-family: Calibri;
+            font-size: 17px;
+            padding: 10px 5px 0;
+            color: #111;
+            line-height: 1.5;
+        }
+    }
+
+    ul{
+        padding-top: 8px;
+        li{
+            color: #555;
+            font-size: 14px;
+            padding: 2px 0;
+        }
+        li:before{
+            content: "*"
         }
     }
 }
